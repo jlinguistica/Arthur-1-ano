@@ -109,6 +109,16 @@
     @media (max-width: 899px) { .notes { grid-template-columns: 1fr; } }
     @media (max-width: 640px) { .hero h1 { max-width: 10ch; } .header-inner { align-items:flex-start; } .footer-inner { flex-direction:column; } }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; } }
+ .gift-image {
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in oklab, var(--color-text) 10%, transparent);
+  margin-bottom: var(--space-2);
+  background: var(--color-surface-offset);
+}
   </style>
 </head>
 <body>
@@ -161,6 +171,7 @@
         </div>
         <div class="grid gift-grid">
          <article class="gift-card">
+           <img src="Mamarquandoosolraiar.jpg" alt="Capa do livro Mamar quando o sol raiar" width="160" height="160" loading="lazy" class="gift-image">
   <span class="gift-tag">Livros</span>
   <h3>Mamar quando o sol raiar</h3>
   <p>Um livro delicado para apoiar o desmame noturno de forma respeitosa e acolhedora.</p>
