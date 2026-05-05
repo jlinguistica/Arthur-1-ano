@@ -11,51 +11,55 @@
   <link rel="preconnect" href="https://api.fontshare.com" />
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=boska@400,500,700&display=swap" rel="stylesheet" />
   <style>
-    :root, [data-theme="light"] {
-      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
-      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
-      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
-      --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
-      --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
-      --color-bg: #f7f6f2; --color-surface: #f9f8f5; --color-surface-2: #fbfbf9;
-      --color-surface-offset: #f3f0ec; --color-border: #d4d1ca; --color-divider: #dcd9d5;
-      --color-text: #28251d; --color-text-muted: #6f6c66; --color-text-faint: #9d9b96;
-      --color-text-inverse: #f9f8f4;
-      --color-primary: #01696f; --color-primary-hover: #0c4e54; --color-primary-highlight: #cedcd8;
-      --radius-sm: 0.375rem; --radius-md: 0.75rem; --radius-lg: 1rem;
-      --radius-xl: 1.5rem; --radius-full: 9999px;
-      --shadow-sm: 0 1px 2px oklch(0.2 0.01 80 / 0.06);
-      --shadow-md: 0 8px 24px oklch(0.2 0.01 80 / 0.09);
-      --shadow-lg: 0 18px 48px oklch(0.2 0.01 80 / 0.12);
-      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
-      --content-default: 1100px;
-      --font-display: 'Boska', Georgia, serif;
-      --font-body: 'Satoshi', Inter, sans-serif;
-    }
-    [data-theme="dark"] {
-      --color-bg: #171614; --color-surface: #1c1b19; --color-surface-2: #201f1d;
-      --color-surface-offset: #22211f; --color-border: #393836; --color-divider: #262523;
-      --color-text: #e5e2dc; --color-text-muted: #b2aea7; --color-text-faint: #7f7b75;
-      --color-text-inverse: #171614;
-      --color-primary: #4f98a3; --color-primary-hover: #69aeb8; --color-primary-highlight: #313b3b;
-      --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
-      --shadow-md: 0 8px 24px oklch(0 0 0 / 0.3);
-      --shadow-lg: 0 18px 48px oklch(0 0 0 / 0.4);
-    }
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme]) {
-        --color-bg: #171614; --color-surface: #1c1b19; --color-surface-2: #201f1d;
-        --color-surface-offset: #22211f; --color-border: #393836; --color-divider: #262523;
-        --color-text: #e5e2dc; --color-text-muted: #b2aea7; --color-text-faint: #7f7b75;
-        --color-text-inverse: #171614;
-        --color-primary: #4f98a3; --color-primary-hover: #69aeb8; --color-primary-highlight: #313b3b;
-      }
-    }
+  :root, [data-theme="light"] {
+  --color-bg:               #F5EDE6;
+  --color-surface:          #F8F2ED;
+  --color-surface-2:        #FBF7F4;
+  --color-surface-offset:   #EDE3DA;
+  --color-border:           #D4C5BA;
+  --color-divider:          #DDD0C7;
+  --color-text:             #2E1C12;
+  --color-text-muted:       #7A5E52;
+  --color-text-faint:       #B09A90;
+  --color-text-inverse:     #FBF7F4;
+  --color-primary:          #8B4A30;
+  --color-primary-hover:    #6B3420;
+  --color-primary-highlight:#E8CFC4;
+}
 
+[data-theme="dark"] {
+  --color-bg:               #1A100B;
+  --color-surface:          #201510;
+  --color-surface-2:        #261A14;
+  --color-surface-offset:   #2C1F18;
+  --color-border:           #3E2D24;
+  --color-divider:          #2F2018;
+  --color-text:             #EAD9CF;
+  --color-text-muted:       #B89080;
+  --color-text-faint:       #7A5E52;
+  --color-text-inverse:     #1A100B;
+  --color-primary:          #C47A5A;
+  --color-primary-hover:    #D99070;
+  --color-primary-highlight:#3D2318;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-bg:               #1A100B;
+    --color-surface:          #201510;
+    --color-surface-2:        #261A14;
+    --color-surface-offset:   #2C1F18;
+    --color-border:           #3E2D24;
+    --color-divider:          #2F2018;
+    --color-text:             #EAD9CF;
+    --color-text-muted:       #B89080;
+    --color-text-faint:       #7A5E52;
+    --color-text-inverse:     #1A100B;
+    --color-primary:          #C47A5A;
+    --color-primary-hover:    #D99070;
+    --color-primary-highlight:#3D2318;
+  }
+}
     /* Transição suave ao trocar tema */
     html {
       transition: background-color 300ms ease, color 300ms ease;
