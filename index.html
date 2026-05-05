@@ -270,6 +270,17 @@
         transition: none !important;
       }
     }
+    .pix-qr {
+  width: min(100%, 280px);
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  margin-inline: auto;
+  border-radius: var(--radius-md);
+  background: white;
+  padding: var(--space-2);
+  border: 1px solid color-mix(in oklab, var(--color-text) 10%, transparent);
+  box-shadow: var(--shadow-sm);
+}
   </style>
 </head>
 <body>
@@ -445,20 +456,33 @@
             <li><strong>Antes de comprar:</strong> uma mensagem rápida ajuda a evitar presentes duplicados.</li>
           </ul>
         </article>
-        <aside class="panel">
-          <h3>Contribuição por PIX</h3>
-          <div class="pix-box">
-            <p>Aqui está a nossa chave PIX para quem preferir contribuir em dinheiro.</p>
-            <div class="pix-row">
-              <div class="pix-code" id="pix-key">sua-chave-pix-ou-codigo-copia-e-cola-aqui</div>
-              <button
-                class="btn btn-primary"
-                style="white-space:nowrap;"
-                onclick="navigator.clipboard.writeText(document.getElementById('pix-key').textContent.trim()).then(()=>{ this.textContent='Copiado ✓'; setTimeout(()=>this.textContent='Copiar',2000) })"
-              >Copiar</button>
-            </div>
-          </div>
-        </aside>
+     <aside class="panel">
+  <h3>Contribuição por PIX</h3>
+  <div class="pix-box">
+    <p>Aqui está a nossa chave PIX para quem preferir contribuir em dinheiro.</p>
+
+    <img
+      src="PixNBC.jpg"
+      alt="QR Code para pagamento por PIX"
+      width="280"
+      height="280"
+      loading="lazy"
+      class="pix-qr"
+    >
+
+    <div class="pix-row">
+      <div class="pix-code" id="pix-key">00020126460014br.gov.bcb.pix0117nbcosta@gmail.com0203Pix5204000053039865802BR5922NAILA_BARBOSA_DA_COSTA6011SETE_LAGOAS62150511ArthurFaz016304B2F6</div>
+      <button
+        class="btn btn-primary"
+        type="button"
+        style="white-space:nowrap;"
+        onclick="navigator.clipboard.writeText(document.getElementById('pix-key').textContent.trim()).then(()=>{ this.textContent='Copiado ✓'; setTimeout(()=>this.textContent='Copiar',2000) })"
+      >Copiar</button>
+    </div>
+
+    <p class="small">Vocês podem usar o QR Code ou copiar o código PIX.</p>
+  </div>
+</aside>
       </div>
     </section>
   </main>
