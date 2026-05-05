@@ -281,6 +281,22 @@
   border: 1px solid color-mix(in oklab, var(--color-text) 10%, transparent);
   box-shadow: var(--shadow-sm);
 }
+    .hero-photo-wrap {
+  display: flex;
+  align-items: stretch;
+}
+
+.hero-photo {
+  width: 100%;
+  min-height: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-xl);
+  border: 1px solid color-mix(in oklab, var(--color-text) 10%, transparent);
+  box-shadow: var(--shadow-lg);
+  background: var(--color-surface);
+}
   </style>
 </head>
 <body>
@@ -314,14 +330,16 @@
           <h1>Uma lista carinhosa para o primeiro aniversário do nosso filho.</h1>
           <p>Criamos esta página para facilitar para todo mundo. Vocês podem comprar um dos presentes abaixo e mandar para a casa da avó dele, ou enviar o valor por PIX para que nós mesmos façamos a compra.</p>
         </div>
-        <aside class="hero-card" aria-label="Como funciona">
-          <h2>Como funciona</h2>
-          <ul>
-            <li><span class="dot" aria-hidden="true"></span><span>Veja abaixo os livros que escolhemos.</span></li>
-            <li><span class="dot" aria-hidden="true"></span><span>Abra o link do presente em uma loja do Brasil e faça a compra diretamente.</span></li>
-            <li><span class="dot" aria-hidden="true"></span><span>Se for mais fácil, envie o valor por PIX e nós compramos o presente.</span></li>
-          </ul>
-        </aside>
+       <aside class="hero-photo-wrap" aria-label="Foto de capa do site">
+  <img
+    src="photo_capa_k.jpg"
+    alt="Foto do nosso filho de bruços, usada como imagem de capa da lista de presentes"
+    width="900"
+    height="1023"
+    loading="eager"
+    class="hero-photo"
+  >
+</aside>
       </div>
     </section>
 
