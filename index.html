@@ -3,333 +3,158 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lista de Presentes de 1 Ano</title>
-  <meta name="description" content="Uma página simples com sugestões de livros e produtos disponíveis no Brasil para o aniversário de 1 ano do nosso filho." />
-  <meta property="og:title" content="Lista de Presentes de 1 Ano" />
-  <meta property="og:description" content="Livros e produtos que gostaríamos para o aniversário de 1 ano do nosso filho, com opções de envio para a casa da avó ou contribuição por PIX." />
-  <meta property="og:type" content="website" />
+  <title>Lista de Presentes | 1 Ano</title>
+  <meta name="description" content="Sugestões de livros e mimos para o aniversário de 1 ano do nosso filho." />
+  
   <link rel="preconnect" href="https://api.fontshare.com" />
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=boska@400,500,700&display=swap" rel="stylesheet" />
+  
   <style>
-    :root, [data-theme="light"] {
+    :root {
+      /* Fluid Typography */
       --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
       --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
       --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
       --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
       --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
       --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
-      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
-      --color-bg: #f7f6f2; --color-surface: #f9f8f5; --color-surface-2: #fbfbf9; --color-surface-offset: #f3f0ec; --color-border: #d4d1ca; --color-divider: #dcd9d5;
-      --color-text: #28251d; --color-text-muted: #6f6c66; --color-text-faint: #9d9b96; --color-text-inverse: #f9f8f4;
-      --color-primary: #01696f; --color-primary-hover: #0c4e54; --color-primary-highlight: #cedcd8;
-      --radius-sm: 0.375rem; --radius-md: 0.75rem; --radius-lg: 1rem; --radius-xl: 1.5rem; --radius-full: 9999px;
-      --shadow-sm: 0 1px 2px oklch(0.2 0.01 80 / 0.06); --shadow-md: 0 8px 24px oklch(0.2 0.01 80 / 0.09); --shadow-lg: 0 18px 48px oklch(0.2 0.01 80 / 0.12);
-      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
-      --content-default: 1100px;
-      --font-display: 'Boska', Georgia, serif;
-      --font-body: 'Satoshi', Inter, sans-serif;
+
+      /* Spacing & Colors */
+      --space-4: 1rem; --space-6: 1.5rem; --space-8: 2rem; --space-12: 3rem;
+      --color-bg: #f7f6f2; --color-surface: #ffffff; --color-text: #28251d;
+      --color-text-muted: #6f6c66; --color-primary: #01696f;
+      --color-primary-hover: #0c4e54; --color-primary-highlight: #e6f0ee;
+      --radius-lg: 1rem; --shadow-md: 0 12px 34px -10px oklch(0.2 0.01 80 / 0.15);
+      --font-display: 'Boska', serif; --font-body: 'Satoshi', sans-serif;
+      --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     [data-theme="dark"] {
-      --color-bg: #171614; --color-surface: #1c1b19; --color-surface-2: #201f1d; --color-surface-offset: #22211f; --color-border: #393836; --color-divider: #262523;
-      --color-text: #e5e2dc; --color-text-muted: #b2aea7; --color-text-faint: #7f7b75; --color-text-inverse: #171614;
-      --color-primary: #4f98a3; --color-primary-hover: #69aeb8; --color-primary-highlight: #313b3b;
-      --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2); --shadow-md: 0 8px 24px oklch(0 0 0 / 0.3); --shadow-lg: 0 18px 48px oklch(0 0 0 / 0.4);
+      --color-bg: #121211; --color-surface: #1c1b19; --color-text: #e5e2dc;
+      --color-text-muted: #b2aea7; --color-primary: #4f98a3;
+      --color-primary-highlight: #1e2a2b;
     }
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme]) {
-        --color-bg: #171614; --color-surface: #1c1b19; --color-surface-2: #201f1d; --color-surface-offset: #22211f; --color-border: #393836; --color-divider: #262523;
-        --color-text: #e5e2dc; --color-text-muted: #b2aea7; --color-text-faint: #7f7b75; --color-text-inverse: #171614;
-        --color-primary: #4f98a3; --color-primary-hover: #69aeb8; --color-primary-highlight: #313b3b;
-      }
-    }
+
+    /* Reset & Base */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: none; text-size-adjust: none; }
-    body { min-height: 100dvh; line-height: 1.6; font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); background: var(--color-bg); }
-    img, svg { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; border: 0; background: none; color: inherit; cursor: pointer; }
-    p { max-width: 68ch; text-wrap: pretty; }
-    h1, h2, h3 { line-height: 1.1; text-wrap: balance; }
-    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
-    .skip-link { position:absolute; left:var(--space-4); top:-3rem; background:var(--color-primary); color:var(--color-text-inverse); padding:var(--space-3) var(--space-4); border-radius:var(--radius-full); z-index:100; }
-    .skip-link:focus { top: var(--space-4); }
-    .container { width:min(calc(100% - 2rem), var(--content-default)); margin-inline:auto; }
-    .site-header { position:sticky; top:0; z-index:50; backdrop-filter: blur(14px); background: color-mix(in oklab, var(--color-bg) 88%, transparent); border-bottom:1px solid color-mix(in oklab, var(--color-text) 10%, transparent); }
-    .header-inner { display:flex; align-items:center; justify-content:space-between; gap:var(--space-4); padding:var(--space-4) 0; }
-    .brand { display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-sm); font-weight:700; letter-spacing:0.01em; }
-    .brand svg { width:2rem; height:2rem; color:var(--color-primary); }
-    .header-actions { display:flex; align-items:center; gap:var(--space-2); }
-    .theme-toggle { width:44px; height:44px; display:grid; place-items:center; border-radius:var(--radius-full); background:var(--color-surface); border:1px solid color-mix(in oklab, var(--color-text) 10%, transparent); box-shadow: var(--shadow-sm); }
-    .hero { padding: clamp(var(--space-12), 10vw, var(--space-20)) 0 var(--space-12); }
-    .hero-grid { display:grid; gap:var(--space-8); align-items:end; }
-    .eyebrow { display:inline-flex; align-items:center; gap:var(--space-2); padding:var(--space-2) var(--space-3); border-radius:var(--radius-full); background:var(--color-primary-highlight); color:var(--color-primary); font-size:var(--text-xs); font-weight:700; text-transform:uppercase; letter-spacing:0.08em; }
-    .hero h1 { margin-top:var(--space-5); font-family:var(--font-display); font-size:var(--text-2xl); max-width:12ch; }
-    .hero p { margin-top:var(--space-4); color:var(--color-text-muted); }
-    .hero-card { padding:var(--space-6); background:linear-gradient(180deg, var(--color-surface-2), var(--color-surface)); border:1px solid color-mix(in oklab, var(--color-text) 12%, transparent); border-radius:var(--radius-xl); box-shadow:var(--shadow-lg); }
-    .hero-card h2 { font-size:var(--text-lg); margin-bottom:var(--space-3); }
-    .hero-card ul { list-style:none; display:grid; gap:var(--space-3); color:var(--color-text-muted); }
-    .hero-card li { display:flex; gap:var(--space-3); align-items:flex-start; }
-    .dot { width:0.75rem; height:0.75rem; border-radius:var(--radius-full); background:var(--color-primary); margin-top:0.45rem; flex:0 0 auto; }
-    .section { padding: var(--space-12) 0; }
-    .section + .section { border-top:1px solid var(--color-divider); }
-    .section-head { display:flex; flex-direction:column; gap:var(--space-3); margin-bottom:var(--space-8); }
-    .section-head h2 { font-size:var(--text-xl); font-family:var(--font-display); }
-    .section-head p { color:var(--color-text-muted); }
-    .grid { display:grid; gap:var(--space-5); }
-    .gift-grid { grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); }
-    .gift-card { display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-5); background:var(--color-surface); border-radius:var(--radius-lg); border:1px solid color-mix(in oklab, var(--color-text) 10%, transparent); box-shadow:var(--shadow-sm); min-height:100%; }
-    .gift-card:hover { box-shadow:var(--shadow-md); transform:translateY(-2px); }
-    .gift-tag { display:inline-flex; align-self:flex-start; padding:var(--space-1) var(--space-3); background:var(--color-surface-offset); border-radius:var(--radius-full); font-size:var(--text-xs); font-weight:700; color:var(--color-text-muted); }
-    .gift-card h3 { font-size:var(--text-lg); }
-    .gift-card p { color:var(--color-text-muted); font-size:var(--text-sm); }
-    .gift-meta { display:flex; flex-wrap:wrap; gap:var(--space-2); margin-top:auto; }
-    .meta-pill { display:inline-flex; padding:var(--space-1) var(--space-3); border-radius:var(--radius-full); background:color-mix(in oklab, var(--color-primary) 10%, var(--color-surface)); color:var(--color-primary); font-size:var(--text-xs); font-weight:700; }
-    .card-actions { display:flex; flex-wrap:wrap; gap:var(--space-3); padding-top:var(--space-2); }
-    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0.85rem 1.1rem; border-radius:var(--radius-full); font-size:var(--text-sm); font-weight:700; transition:transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition); }
-    .btn:hover { transform:translateY(-1px); }
-    .btn-primary { background:var(--color-primary); color:var(--color-text-inverse); }
-    .btn-primary:hover { background:var(--color-primary-hover); }
-    .btn-secondary { background:var(--color-surface-offset); border:1px solid color-mix(in oklab, var(--color-text) 10%, transparent); }
-    .steps { grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); }
-    .step { padding:var(--space-5); background:var(--color-surface); border-radius:var(--radius-lg); border:1px solid color-mix(in oklab, var(--color-text) 10%, transparent); }
-    .step-number { width:2rem; height:2rem; display:grid; place-items:center; border-radius:var(--radius-full); background:var(--color-primary); color:var(--color-text-inverse); font-size:var(--text-sm); font-weight:700; margin-bottom:var(--space-4); }
-    .step h3 { margin-bottom:var(--space-2); font-size:var(--text-lg); }
-    .step p { color:var(--color-text-muted); font-size:var(--text-sm); }
-    .notes { display:grid; gap:var(--space-5); grid-template-columns: 1.15fr 0.85fr; }
-    .panel { padding:var(--space-6); background:var(--color-surface); border-radius:var(--radius-xl); border:1px solid color-mix(in oklab, var(--color-text) 10%, transparent); box-shadow:var(--shadow-sm); }
-    .panel h3 { font-size:var(--text-lg); margin-bottom:var(--space-3); }
-    .panel p, .panel li { color:var(--color-text-muted); }
-    .panel ul { padding-left:1.1rem; display:grid; gap:var(--space-2); }
-    .pix-box { display:grid; gap:var(--space-3); padding:var(--space-5); border-radius:var(--radius-lg); background:color-mix(in oklab, var(--color-primary) 12%, var(--color-surface)); }
-    .pix-code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:var(--text-sm); background:var(--color-bg); padding:var(--space-3); border-radius:var(--radius-md); overflow-wrap:anywhere; border:1px dashed color-mix(in oklab, var(--color-primary) 28%, transparent); }
-    .footer { padding:var(--space-10) 0 var(--space-12); color:var(--color-text-muted); font-size:var(--text-sm); }
-    .footer-inner { display:flex; justify-content:space-between; gap:var(--space-4); flex-wrap:wrap; }
-    .small { font-size:var(--text-xs); color:var(--color-text-faint); }
-    @media (min-width: 900px) { .hero-grid { grid-template-columns: 1.15fr 0.85fr; } }
-    @media (max-width: 899px) { .notes { grid-template-columns: 1fr; } }
-    @media (max-width: 640px) { .hero h1 { max-width: 10ch; } .header-inner { align-items:flex-start; } .footer-inner { flex-direction:column; } }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; } }
- .gift-image {
-  width: 100%;
-  max-width: 180px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-  border: 1px solid color-mix(in oklab, var(--color-text) 10%, transparent);
-  margin-bottom: var(--space-2);
-  background: var(--color-surface-offset);
-}
+    body { font-family: var(--font-body); background: var(--color-bg); color: var(--color-text); line-height: 1.6; transition: background var(--transition); }
+    .container { width: min(90%, 1100px); margin-inline: auto; }
+
+    /* Header */
+    .site-header { position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); border-bottom: 1px solid color-mix(in oklab, var(--color-text) 8%, transparent); padding: 0.75rem 0; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; }
+
+    /* Cards & Grid */
+    .gift-grid { display: grid; gap: var(--space-6); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .gift-card { 
+      background: var(--color-surface); 
+      padding: var(--space-6); 
+      border-radius: var(--radius-lg); 
+      border: 1px solid color-mix(in oklab, var(--color-text) 10%, transparent);
+      transition: all var(--transition);
+      display: flex; flex-direction: column;
+    }
+    .gift-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--color-primary); }
+
+    .gift-image { 
+      width: 100%; height: 220px; object-fit: cover; 
+      border-radius: calc(var(--radius-lg) - 4px); 
+      margin-bottom: 1rem;
+      background: var(--color-primary-highlight);
+    }
+
+    /* Buttons */
+    .btn { 
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 700;
+      text-decoration: none; transition: all var(--transition); cursor: pointer;
+    }
+    .btn-primary { background: var(--color-primary); color: white; }
+    .btn-primary:hover { background: var(--color-primary-hover); opacity: 0.9; }
+
+    /* PIX Area */
+    .pix-box { 
+      background: var(--color-primary-highlight); padding: 1.5rem; 
+      border-radius: var(--radius-lg); margin-top: 1rem; border: 1px dashed var(--color-primary);
+    }
+    .pix-code { 
+      background: var(--color-surface); padding: 1rem; border-radius: 8px;
+      font-family: monospace; font-size: 0.9rem; margin-top: 0.5rem;
+      cursor: pointer; position: relative; overflow: hidden;
+    }
+    .pix-code::after { content: "Clique para copiar"; position: absolute; right: 10px; font-size: 10px; color: var(--color-primary); top: 5px; }
+
+    @media (max-width: 600px) { .hero h1 { font-size: var(--text-xl); } }
   </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Ir para o conteúdo</a>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#topo" class="brand" aria-label="Voltar ao topo">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="9" y="22" width="46" height="31" rx="11" stroke="currentColor" stroke-width="3.5"/>
-          <path d="M19 22C19 14.3 24.8 9 32 9C39.2 9 45 14.3 45 22" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
-          <circle cx="24" cy="38" r="2.5" fill="currentColor"/>
-          <circle cx="32" cy="38" r="2.5" fill="currentColor"/>
-          <circle cx="40" cy="38" r="2.5" fill="currentColor"/>
-        </svg>
-        <span>Lista de Presentes</span>
-      </a>
-      <div class="header-actions">
-        <a class="btn btn-secondary" href="#presentes">Ver presentes</a>
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Mudar para modo escuro">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-      </div>
+      <div style="font-weight: 700; font-family: var(--font-display); font-size: 1.2rem;">Parabéns Arthur</div>
+      <button class="theme-toggle" id="themeToggle" style="background:none; border:1px solid var(--color-text); border-radius:50%; width:40px; height:40px; cursor:pointer; color:inherit;">
+        🌓
+      </button>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero" id="topo">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">Para família e amigos no Brasil</span>
-          <h1>Uma lista carinhosa para o primeiro aniversário do nosso filho.</h1>
-          <p>Criamos esta página para facilitar para todo mundo. Vocês podem comprar um dos presentes abaixo e mandar para a casa da avó dele, ou enviar o valor por PIX para que nós mesmos façamos a compra.</p>
-        </div>
-        <aside class="hero-card" aria-label="Como funciona">
-          <h2>Como funciona</h2>
-          <ul>
-            <li><span class="dot" aria-hidden="true"></span><span>Veja abaixo os livros e produtos que escolhemos.</span></li>
-            <li><span class="dot" aria-hidden="true"></span><span>Abra o link do presente em uma loja do Brasil e faça a compra diretamente.</span></li>
-            <li><span class="dot" aria-hidden="true"></span><span>Se for mais fácil, envie o valor por PIX e nós compramos o presente.</span></li>
-          </ul>
-        </aside>
-      </div>
+  <main class="container">
+    <section style="padding: 4rem 0;">
+      <span style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: var(--color-primary); font-weight: 700;">Aniversário de 1 Ano</span>
+      <h1 style="font-family: var(--font-display); font-size: var(--text-2xl); margin: 1rem 0;">Livros e mimos que o Arthur vai adorar.</h1>
+      <p style="color: var(--color-text-muted); max-width: 600px;">Para facilitar o carinho de quem está longe, selecionamos alguns livros. Você pode enviar para o Brasil ou contribuir via PIX.</p>
     </section>
 
-    <section class="section" id="presentes">
-      <div class="container">
-        <div class="section-head">
-          <h2>Sugestões de presentes</h2>
-          <p>Aqui estão alguns presentes que escolhemos com carinho, com links para compra em lojas do Brasil. Fiquem à vontade para escolher daqui ou se inspirar para algo parecido.</p>
-        </div>
-        <div class="grid gift-grid">
-         <article class="gift-card">
-           <img src="Mamarquandoosolraiar.jpg" alt="Capa do livro Mamar quando o sol raiar" width="160" height="160" loading="lazy" class="gift-image">
-  <span class="gift-tag">Livros</span>
-  <h3>Mamar quando o sol raiar</h3>
-  <p>Um livro delicado para apoiar o desmame noturno de forma respeitosa e acolhedora.</p>
-  <div class="gift-meta">
-    <span class="meta-pill">Em português</span>
-    <span class="meta-pill">Leitura em família</span>
-  </div>
-  <div class="card-actions">
-    <a class="btn btn-primary" href="https://www.amazon.com.br/Mamar-quando-raiar-Fernanda-Vernilo/dp/8545565003" target="_blank" rel="noopener noreferrer">Abrir link</a>
-  </div>
-</article>
-          <article class="gift-card">
-  <img src="Ei! Você sabe o que é uma queixada.jpg" alt="Capa do livro Ei! Você sabe o que é uma queixada?" width="160" height="160" loading="lazy" class="gift-image">
-  <span class="gift-tag">Livros</span>
-  <h3>Ei! Você sabe o que é uma queixada?</h3>
-  <p>Um livro infantil sobre a queixada, com foco em fauna brasileira e descoberta da natureza.</p>
-  <div class="gift-meta">
-    <span class="meta-pill">Fauna brasileira</span>
-    <span class="meta-pill">Leitura em família</span>
-  </div>
-  <div class="card-actions">
-    <a class="btn btn-primary" href="https://gabrielaclairelivr.wixsite.com/livrosinfantis/livro-%C3%A0-venda" target="_blank" rel="noopener noreferrer">Abrir link</a>
-  </div>
-</article>
+    <div class="gift-grid" id="presentes">
+      <!-- Card Modelo -->
+      <article class="gift-card">
+        <img src="Mamarquandoosolraiar.jpg" alt="Mamar quando o sol raiar" class="gift-image">
+        <h3 style="font-family: var(--font-display); margin-bottom: 0.5rem;">Mamar quando o sol raiar</h3>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 1.5rem; flex-grow: 1;">Apoio ao desmame noturno de forma respeitosa e acolhedora.</p>
+        <a href="https://www.amazon.com.br/Mamar-quando-raiar-Fernanda-Vernilo/dp/8545565003" class="btn btn-primary" target="_blank">Ver na Amazon</a>
+      </article>
 
-<article class="gift-card">
-  <img src="Na toca da tatu Açu.jpg" alt="Capa do livro Na toca da tatu Açu" width="160" height="160" loading="lazy" class="gift-image">
-  <span class="gift-tag">Livros</span>
-  <h3>Na toca da tatu Açu</h3>
-  <p>Uma história sobre a tatu-canastra, cheia de curiosidades sobre um animal raro e fascinante.</p>
-  <div class="gift-meta">
-    <span class="meta-pill">Natureza</span>
-    <span class="meta-pill">Fauna brasileira</span>
-  </div>
-  <div class="card-actions">
-    <a class="btn btn-primary" href="https://gabrielaclairelivr.wixsite.com/livrosinfantis/livro-%C3%A0-venda" target="_blank" rel="noopener noreferrer">Abrir link</a>
-  </div>
-</article>
+      <!-- Repita os cards para os outros livros conforme o modelo acima -->
+    </div>
 
-<article class="gift-card">
-  <img src="Nas pegadas da Tikoa.jpeg" alt="Capa do livro Nas pegadas da Tikoa" width="160" height="160" loading="lazy" class="gift-image">
-  <span class="gift-tag">Livros</span>
-  <h3>Nas pegadas da Tikoa</h3>
-  <p>Um livro sobre o tamanduá-bandeira, com texto poético e apresentação carinhosa da fauna brasileira.</p>
-  <div class="gift-meta">
-    <span class="meta-pill">Animais</span>
-    <span class="meta-pill">Leitura em família</span>
-  </div>
-  <div class="card-actions">
-    <a class="btn btn-primary" href="https://gabrielaclairelivr.wixsite.com/livrosinfantis/livro-%C3%A0-venda" target="_blank" rel="noopener noreferrer">Abrir link</a>
-  </div>
-</article>
-
-<article class="gift-card">
-  <img src="Tem alguém em casa.jpg" alt="Capa do livro Tem Alguém em Casa" width="160" height="160" loading="lazy" class="gift-image">
-  <span class="gift-tag">Livros</span>
-  <h3>Tem Alguém em Casa?</h3>
-  <p>Um livro ilustrado delicado para explorar surpresa, observação e leitura compartilhada com bebês e crianças pequenas.</p>
-  <div class="gift-meta">
-    <span class="meta-pill">Ilustrado</span>
-    <span class="meta-pill">Primeira infância</span>
-  </div>
-  <div class="card-actions">
-    <a class="btn btn-primary" href="https://www.amazon.com.br/Tem-Algu%C3%A9m-Casa-Aline-Abreu/dp/6589830126" target="_blank" rel="noopener noreferrer">Abrir link</a>
-  </div>
-</article>
-
-<article class="gift-card">
-  <img src="Bem lá no alto.jpg" alt="Capa do livro Bem lá no alto" width="160" height="160" loading="lazy" class="gift-image">
-  <span class="gift-tag">Livros</span>
-  <h3>Bem lá no alto</h3>
-  <p>Um livro divertido e muito querido para leitura em voz alta, com repetição e ritmo que costumam funcionar bem nessa idade.</p>
-  <div class="gift-meta">
-    <span class="meta-pill">Leitura em voz alta</span>
-    <span class="meta-pill">Primeira infância</span>
-  </div>
-  <div class="card-actions">
-    <a class="btn btn-primary" href="https://www.amazon.com.br/Bem-l%C3%A1-alto-Susanne-Stra%C3%9Fer/dp/8574067199" target="_blank" rel="noopener noreferrer">Abrir link</a>
-  </div>
-</article>
-         </div>
+    <section style="margin: 4rem 0; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+      <div class="gift-card">
+        <h2 style="font-family: var(--font-display);">Entrega</h2>
+        <p style="margin-top: 1rem;">Para envios físicos, por favor, utilize o endereço da vovó. Peça o endereço completo via WhatsApp para garantirmos que alguém receba!</p>
       </div>
-    </section>
 
-    <section class="section" id="opcoes">
-      <div class="container">
-        <div class="section-head">
-          <h2>Duas formas simples de participar</h2>
-          <p>Assim cada pessoa pode escolher o que for mais prático: comprar diretamente ou mandar o valor por PIX.</p>
+      <div class="gift-card">
+        <h2 style="font-family: var(--font-display);">Contribuição PIX</h2>
+        <div class="pix-box">
+          <p style="font-size: 0.8rem;">Toque no código abaixo para copiar:</p>
+          <div class="pix-code" id="pixKey">sua-chave-pix-aqui</div>
         </div>
-        <div class="grid steps">
-          <article class="step">
-            <div class="step-number">1</div>
-            <h3>Comprar e enviar</h3>
-            <p>Escolha um presente, faça o pedido em uma loja brasileira e envie para a casa da avó dele.</p>
-          </article>
-          <article class="step">
-            <div class="step-number">2</div>
-            <h3>Nos avisar</h3>
-            <p>Uma mensagem rápida ajuda a evitar presentes repetidos e facilita nossa organização.</p>
-          </article>
-          <article class="step">
-            <div class="step-number">3</div>
-            <h3>Contribuir por PIX</h3>
-            <p>Se for mais prático, vocês podem mandar o valor por PIX e nós fazemos a compra.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="detalhes">
-      <div class="container notes">
-        <article class="panel">
-          <h3>Informações de entrega</h3>
-          <ul>
-            <li><strong>Casa da avó:</strong> peçam o endereço por WhatsApp.</li>
-                      <li><strong>uma mensagem rápida ajuda a evitar presentes duplicados.</li>
-      
-          </ul>
-        </article>
-        <aside class="panel">
-          <h3>Contribuição por PIX</h3>
-          <div class="pix-box">
-         <p>Aqui está a nossa chave PIX para quem preferir contribuir em dinheiro.</p>
-<div class="pix-code">sua-chave-pix-ou-codigo-copia-e-cola-aqui</div>
-          
-          </div>
-        </aside>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>Feito com carinho para nossa família no Brasil.</p>
-      <p class="small">Dica: publiquem este arquivo no GitHub Pages e atualizem os presentes sempre que quiserem.</p>
-    </div>
+  <footer style="text-align: center; padding: 4rem 0; opacity: 0.6; font-size: 0.8rem;">
+    <p>Com amor, Família Barbosa.</p>
   </footer>
 
   <script>
-    (() => {
-      const root = document.documentElement;
-      const toggle = document.querySelector('[data-theme-toggle]');
-      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.setAttribute('data-theme', theme);
-      const setIcon = () => {
-        toggle.innerHTML = theme === 'dark'
-          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
-          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-        toggle.setAttribute('aria-label', theme === 'dark' ? 'Mudar para modo claro' : 'Mudar para modo escuro');
-      };
-      setIcon();
-      toggle.addEventListener('click', () => {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', theme);
-        setIcon();
+    // Theme Toggle
+    const btn = document.getElementById('themeToggle');
+    btn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    });
+
+    // Copy PIX
+    const pixBox = document.getElementById('pixKey');
+    pixBox.addEventListener('click', () => {
+      const text = pixBox.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = pixBox.innerText;
+        pixBox.innerText = "Copiado! ✅";
+        setTimeout(() => { pixBox.innerText = originalText; }, 2000);
       });
-    })();
+    });
   </script>
 </body>
 </html>
