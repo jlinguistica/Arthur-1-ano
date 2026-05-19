@@ -36,6 +36,45 @@
   --font-display: 'Boska', Georgia, serif;
   --font-body: 'Satoshi', Inter, sans-serif;
 }
+[data-theme="dark"] {
+  --color-bg: #171614;
+  --color-surface: #1c1b19;
+  --color-surface-2: #201f1d;
+  --color-surface-offset: #1d1c1a;
+  --color-border: #393836;
+  --color-divider: #262523;
+  --color-text: #cdccca;
+  --color-text-muted: #797876;
+  --color-text-faint: #5a5957;
+  --color-text-inverse: #2b2a28;
+  --color-primary: #4f98a3;
+  --color-primary-hover: #227f8b;
+  --color-primary-highlight: #313b3b;
+  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
+  --shadow-md: 0 8px 24px oklch(0 0 0 / 0.35);
+  --shadow-lg: 0 18px 48px oklch(0 0 0 / 0.45);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-bg: #171614;
+    --color-surface: #1c1b19;
+    --color-surface-2: #201f1d;
+    --color-surface-offset: #1d1c1a;
+    --color-border: #393836;
+    --color-divider: #262523;
+    --color-text: #cdccca;
+    --color-text-muted: #797876;
+    --color-text-faint: #5a5957;
+    --color-text-inverse: #2b2a28;
+    --color-primary: #4f98a3;
+    --color-primary-hover: #227f8b;
+    --color-primary-highlight: #313b3b;
+    --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
+    --shadow-md: 0 8px 24px oklch(0 0 0 / 0.35);
+    --shadow-lg: 0 18px 48px oklch(0 0 0 / 0.45);
+  }
+}
+
     /* Transição suave ao trocar tema */
     html {
       transition: background-color 300ms ease, color 300ms ease;
@@ -107,19 +146,7 @@
       font-size: var(--text-2xl); max-width: 12ch;
     }
     .hero p { margin-top: var(--space-4); color: var(--color-text-muted); }
-    .hero-card {
-      padding: var(--space-6);
-      background: linear-gradient(180deg, var(--color-surface-2), var(--color-surface));
-      border: 1px solid color-mix(in oklab, var(--color-text) 12%, transparent);
-      border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);
-    }
-    .hero-card h2 { font-size: var(--text-lg); margin-bottom: var(--space-3); }
-    .hero-card ul { list-style: none; display: grid; gap: var(--space-3); color: var(--color-text-muted); }
-    .hero-card li { display: flex; gap: var(--space-3); align-items: flex-start; }
-    .dot {
-      width: 0.75rem; height: 0.75rem; border-radius: var(--radius-full);
-      background: var(--color-primary); margin-top: 0.45rem; flex: 0 0 auto;
-    }
+
 
     .section { padding: var(--space-12) 0; }
     .section + .section { border-top: 1px solid var(--color-divider); }
@@ -312,7 +339,7 @@
         </div>
        <aside class="hero-photo-wrap" aria-label="Foto de capa do site">
   <img
-    src="photo_capa_k.JPG"
+    src="photo_capa_k-7.jpg"
     alt="Foto do nosso filho de bruços, usada como imagem de capa da lista de presentes"
     width="900"
     height="1023"
@@ -332,8 +359,8 @@
         <div class="grid gift-grid">
 
           <article class="gift-card">
-            <img src="Mamarquandoosolraiar.jpg" alt="Capa do livro Mamar quando o sol raiar" width="160" height="160" loading="lazy" class="gift-image">
-            <span class="gift-tag">Livros</span>
+            <img src="Mamarquandoosolraiar-4.jpg" alt="Capa do livro Mamar quando o sol raiar" width="160" height="160" loading="lazy" class="gift-image">
+            <span class="gift-tag">Desmame</span>
             <h3>Mamar quando o sol raiar</h3>
             <p>Um livro delicado para apoiar o desmame noturno de forma respeitosa e acolhedora.</p>
             <div class="gift-meta">
@@ -346,8 +373,8 @@
           </article>
 
           <article class="gift-card">
-            <img src="Ei! Você sabe o que é uma queixada.jpg" alt="Capa do livro Ei! Você sabe o que é uma queixada?" width="160" height="160" loading="lazy" class="gift-image">
-            <span class="gift-tag">Livros</span>
+            <img src="Ei-Voce-sabe-o-que-e-uma-queixada-2.jpg" alt="Capa do livro Ei! Você sabe o que é uma queixada?" width="160" height="160" loading="lazy" class="gift-image">
+            <span class="gift-tag">Fauna brasileira</span>
             <h3>Ei! Você sabe o que é uma queixada?</h3>
             <p>Um livro infantil sobre a queixada, com foco em fauna brasileira e descoberta da natureza.</p>
             <div class="gift-meta">
@@ -360,8 +387,8 @@
           </article>
 
           <article class="gift-card">
-            <img src="Na toca da tatu Açu.jpg" alt="Capa do livro Na toca da tatu Açu" width="160" height="160" loading="lazy" class="gift-image">
-            <span class="gift-tag">Livros</span>
+            <img src="Na-toca-da-tatu-Acu-5.jpg" alt="Capa do livro Na toca da tatu Açu" width="160" height="160" loading="lazy" class="gift-image">
+            <span class="gift-tag">Fauna brasileira</span>
             <h3>Na toca da tatu Açu</h3>
             <p>Uma história sobre a tatu-canastra, cheia de curiosidades sobre um animal raro e fascinante.</p>
             <div class="gift-meta">
@@ -374,8 +401,8 @@
           </article>
 
           <article class="gift-card">
-            <img src="Nas pegadas da Tikoa.jpeg" alt="Capa do livro Nas pegadas da Tikoa" width="160" height="160" loading="lazy" class="gift-image">
-            <span class="gift-tag">Livros</span>
+            <img src="Nas-pegadas-da-Tikoa-6.jpg" alt="Capa do livro Nas pegadas da Tikoa" width="160" height="160" loading="lazy" class="gift-image">
+            <span class="gift-tag">Fauna brasileira</span>
             <h3>Nas pegadas da Tikoa</h3>
             <p>Um livro sobre o tamanduá-bandeira, com texto poético e apresentação carinhosa da fauna brasileira.</p>
             <div class="gift-meta">
@@ -388,8 +415,8 @@
           </article>
 
           <article class="gift-card">
-            <img src="Tem alguém em casa.jpg" alt="Capa do livro Tem Alguém em Casa" width="160" height="160" loading="lazy" class="gift-image">
-            <span class="gift-tag">Livros</span>
+            <img src="Tem-alguem-em-casa-9.jpg" alt="Capa do livro Tem Alguém em Casa" width="160" height="160" loading="lazy" class="gift-image">
+            <span class="gift-tag">Primeira infância</span>
             <h3>Tem Alguém em Casa</h3>
             <p>Um livro ilustrado delicado para explorar surpresa, observação e leitura compartilhada com bebês e crianças pequenas.</p>
             <div class="gift-meta">
@@ -402,8 +429,8 @@
           </article>
 
           <article class="gift-card">
-            <img src="Bem lá no alto.jpg" alt="Capa do livro Bem lá no alto" width="160" height="160" loading="lazy" class="gift-image">
-            <span class="gift-tag">Livros</span>
+            <img src="Bem-la-no-alto.jpg" alt="Capa do livro Bem lá no alto" width="160" height="160" loading="lazy" class="gift-image">
+            <span class="gift-tag">Clássico</span>
             <h3>Bem lá no alto</h3>
             <p>Um livro divertido e muito querido para leitura em voz alta, com repetição e ritmo que costumam funcionar bem nessa idade.</p>
             <div class="gift-meta">
@@ -460,7 +487,7 @@
     <p>Aqui está a nossa chave PIX para quem preferir contribuir em dinheiro.</p>
 
     <img
-      src="PixNBC.jpeg"
+      src="PixNBC-8.jpg"
       alt="QR Code para pagamento por PIX"
       width="280"
       height="280"
